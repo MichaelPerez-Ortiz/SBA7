@@ -29,7 +29,7 @@ const Battle = () => {
         setBattleLog([`Battle Between ${loadedP1.name} and ${loadedP2.name} Begins!`]);
 
       } catch (error) {
-        console.error("Error Getting Pokémon Data:", error);
+        console.error("Error getting Pokémon Data:", error);
         setBattleLog(["Error: Could not load Pokémon Data. Please try Again."]);
       } finally {
         setLoading(false);

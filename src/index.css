@@ -1,0 +1,133 @@
+
+.pokemonSelector {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.selectionControls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.selectContainer {
+  width: 45%;
+}
+
+.selectContainer select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 4px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.disabledLink {
+  pointer-events: none;
+  color: #999;
+}
+
+.battleContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.battleArena {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.pokemon {
+  width: 45%;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+}
+
+.pokemon img {
+  max-width: 120px;
+  height: auto;
+}
+
+.hpBar {
+  width: 100%;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+.hpFill {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+.battleControls {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.movesContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.moveButton {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4a90e2;
+  color: white;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.moveButton:hover {
+  background-color: #357ae8;
+}
+
+.battleLog {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.logEntries p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.resetButton {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.resetButton:hover {
+  background-color: #45a049;
+}
+
+.loading, .error {
+  text-align: center;
+  margin: 50px 0;
+  font-size: 18px;
+}

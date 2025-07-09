@@ -88,7 +88,7 @@ const PokemonSelector = () => {
           <div className="buttonContainer">
             <button onClick={handleRandomSelection}> Random Selection </button>
             <button disabled={!pokemon1 || !pokemon2}>
-              <Link to={`/battle/${pokemon1}/${pokemon2}`} className={!pokemon1 || !pokemon2 ? "disabled-link" : ""}>
+              <Link to={`/battle/${pokemon1}/${pokemon2}`} className={!pokemon1 || !pokemon2 ? "disabledLink" : ""}>
                 Battle!
               </Link>
             </button>

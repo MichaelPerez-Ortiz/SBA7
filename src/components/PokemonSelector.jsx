@@ -1,6 +1,6 @@
 import { useState , useEffect } from 'react';
 import { getPokemon , getRandomPokemon } from './PokemonApi';
-import { Link } from 'react-router-dom';
+import { Link  , useNavigate} from 'react-router-dom';
 
 const PokemonSelector = () => {
   const [pokemon1 , setPokemon1] = useState("");
@@ -51,10 +51,19 @@ const PokemonSelector = () => {
     }
   };
 
+  const startQuickBattle = () => {
+    if(!pokemon1 || !pokemon2) {
+      alert("Please select Both Pokémon First");
+      return;
+    }
+    Navigate(`/battle/${pokemon1}/${pokemon2}/random/random`);
+  };
+
+
   return (
 
     <div className="pokemonSelector">
-      <h1>Select Two Pokémon</h1>
+      <h1>Pokémon Battle Simulator</h1>
       {loading ? (
         <p>Loading Pokémon...</p>
       ) : (
@@ -84,14 +93,32 @@ const PokemonSelector = () => {
               </select>
             </div>
           </div>
-          
-          <div className="buttonContainer">
-            <button onClick={handleRandomSelection}> Random Selection </button>
-            <button disabled={!pokemon1 || !pokemon2}>
-              <Link to={`/battle/${pokemon1}/${pokemon2}`} className={!pokemon1 || !pokemon2 ? "disabledLink" : ""}>
-                Battle!
+
+           <div className = "buttonContainer">
+            <button onClick = {handleRandomSelection} className = "randomButton"> Random Selection </button>
+            
+            <div className = "battleOptions">
+              <button 
+                onClick = {startQuickBattle} 
+                disabled = {!pokemon1 || !pokemon2}
+                className = "quickBattleButton"
+              >
+                Quick Battle
+              </button>
+              
+              <Link 
+                to = {pokemon1 && pokemon2 ? `/moves/${pokemon1}/${pokemon2}` : "#"} 
+                className = {`selectMovesButton ${!pokemon1 || !pokemon2 ? "disabledLink" : ""}`}
+                onClick = {(e) => {
+                  if (!pokemon1 || !pokemon2) {
+                    e.preventDefault();
+                    alert("Please select Both Pokémon First");
+                  }
+                }}
+              >
+                Select Moves
               </Link>
-            </button>
+            </div>
           </div>
         </>
       )}

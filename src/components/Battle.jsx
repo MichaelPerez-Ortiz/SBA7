@@ -174,7 +174,7 @@ const Battle = () => {
       {!gameOver ? (
 
         <div className="battleControls">
-          <h3>{currentTurn === 1 ? pokemon1Data.name : pokemon2Data.name}"s turn</h3>
+          <h3>{currentTurn === 1 ? pokemon1Data.name : pokemon2Data.name}'s turn</h3>
           <div className="movesContainer">
             {(currentTurn === 1 ? pokemon1Data : pokemon2Data).moves.map((move , index) => (
               <button 

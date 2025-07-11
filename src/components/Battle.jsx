@@ -188,7 +188,7 @@ const Battle = () => {
         setAnimation({
             fainted: currentTurn === 1? 2 : 1
         });
-      setBattleLog(prevLog => [...prevLog ,`${defender.name} fainted!` , `${attacker.name} wins the battle!`]);
+      setBattleLog([`${defender.name} fainted!` , `${attacker.name} wins the battle!`]);
     
      setTimeout(() => {
       setGameOver(true);
@@ -282,7 +282,7 @@ const Battle = () => {
          </div>
 
          <div className = "pokemonInfo">
-          <div className="hBar">
+          <div className="hpBar">
             <div className="hpFill" style={{ 
 
               width: `${(pokemon1Data.currentHp / pokemon1Data.hp) * 100}%`  ,
@@ -310,7 +310,7 @@ const Battle = () => {
          </div>
 
          <div className = "pokemonInfo">
-          <div className="hBar">
+          <div className="hpBar">
             <div className="hpFill" style={{ 
 
               width: `${(pokemon2Data.currentHp / pokemon2Data.hp) * 100}%`  ,
@@ -355,7 +355,7 @@ const Battle = () => {
         </div>
       ) : (
         <div className = "battleResult">
-          <h3>{winner} wins!</h3>
+          <h3>{winner === pokemon1Data.name? "You win!" : `${winner} wins!`}</h3>
           <div className = "resultButtons">
             <button onClick = {resetBattle} className = "resetButton"> Battle Again </button>
              <Link to = "/" className = "homeButton"> Back to Selection </Link>

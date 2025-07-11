@@ -7,6 +7,7 @@ const PokemonSelector = () => {
   const [pokemon2 , setPokemon2] = useState("");
   const [pokemonList , setPokemonList] = useState([]);
   const [loading , setLoading] = useState(true);
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchPokemonList = async () => {
@@ -56,7 +57,7 @@ const PokemonSelector = () => {
       alert("Please select Both Pokémon First");
       return;
     }
-    Navigate(`/battle/${pokemon1}/${pokemon2}/random/random`);
+    navigate(`/battle/${pokemon1}/${pokemon2}/random/random`);
   };
 
 

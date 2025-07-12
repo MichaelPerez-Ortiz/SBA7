@@ -132,12 +132,20 @@ useEffect(() => {
 
   return (
     <>
+    
     <div className= "pokedexContainer">
         <div className="pokedexSide"></div>
          <div className="pokedexCornerShadow"></div>
         <div className="pokedexTop"></div>
     </div>
+
+     
     <div className = "moveSelectorContainer">
+      <div className="pokedexButtons">
+      <div className="pokedexButton red"></div>
+      <div className="pokedexButton yellow"></div>
+      <div className="pokedexButton green"></div>
+    </div>
       <h1>Select Moves</h1>
       
       <div className = "pokemonTabs">

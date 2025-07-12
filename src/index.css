@@ -195,29 +195,44 @@ body.movePage .moveSelectorContainer::before {
   z-index: 5;
 
 }
-body.movePage .moveSelectorContainer::after {
-  content:"";
+
+
+.pokedexButtons {
   position: absolute;
   top: -70px;
   left: 90px;
+  z-index: 50;
+}
+
+.pokedexButton {
+  position: absolute;
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  /* background-color: #ee1515; */
-  background: radial-gradient(circle, #ff5a5a 40%, #f599c2 100%);
   border: 2px solid #882323;
-  box-shadow: 
-    4px 2px 3px 1px #4347473a,
-    30px 0 0 #f8d030, 
-    30px 0 0 2px #882323,
-    34px 2.5px 3px 2px #22222259,/*#22222236*/
-    60px 0 0 #78c850,
-    60px 0 0 2px #882323,
-    63px 2.5px 3px 2px #22222259;
-     
-  z-index: 5;
-
+   z-index: 5;
 }
+
+.pokedexButton.red {
+  left: 0;
+  background: radial-gradient(circle, #ff5a5a 40%, #f599c2 100%);
+  box-shadow: 6px 4px 4px 1px #4347473a;
+   z-index: 5;
+}
+
+.pokedexButton.yellow {
+  left: 30px;
+  background: radial-gradient(circle, #ffeb7b 40%, #dfdac6 100%);
+  box-shadow: 4.5px 2px 5px 2px #22222259;
+}
+
+.pokedexButton.green {
+  left: 60px;
+  background: radial-gradient(circle, #b2fa90 40%, #78c850 100%);
+  box-shadow: 3px 2px 3px .5px #22222259;
+}
+
+
 body.movePage .moveSelectorContainer h1 {
   text-align: center;
   color: #222;

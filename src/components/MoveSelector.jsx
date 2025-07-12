@@ -15,6 +15,17 @@ const MoveSelector = () => {
   const [currentPokemon , setCurrentPokemon] = useState(1);
   const [searchTerm , setSearchTerm] = useState("");
 
+useEffect(() => {
+  document.body.classList.add("movePage");
+
+  return () => {
+      document.body.classList.remove("movePage");
+
+  };
+} , []);
+
+
+
   useEffect(() => {
     const fetchPokemonData = async () => {
       try {
@@ -120,6 +131,12 @@ const MoveSelector = () => {
   const filteredMoves = getFilteredMoves();
 
   return (
+    <>
+    <div className= "pokedexContainer">
+        <div className="pokedexSide"></div>
+         <div className="pokedexCornerShadow"></div>
+        <div className="pokedexTop"></div>
+    </div>
     <div className = "moveSelectorContainer">
       <h1>Select Moves</h1>
       
@@ -222,6 +239,7 @@ const MoveSelector = () => {
           disabled = {selectedMoves1.length === 0 || selectedMoves2.length === 0}> Start Battle </button>
       </div>
     </div>
+    </>
   );
 };
 

@@ -9,6 +9,19 @@ const PokemonSelector = () => {
   const [loading , setLoading] = useState(true);
   const navigate = useNavigate()
 
+
+useEffect(() => {
+  document.body.classList.add("pokemonPage");
+
+  return () => {
+      document.body.classList.remove("pokemonPage");
+
+  };
+} , []);
+
+
+
+
   useEffect(() => {
     const fetchPokemonList = async () => {
       try { 
